@@ -1,4 +1,8 @@
-import sklearn
+from sklearn import tree
 
 features = [[140, 1], [130, 1], [150, 0], [170, 0]]
-labels = ['apple', 'apple', 'orange', 'orange']
+labels = [0, 0, 1, 1]
+
+clf = tree.DecisionTreeClassifier().fit(features, labels)
+
+print clf.predict([[160, 0], [130, 1]])
